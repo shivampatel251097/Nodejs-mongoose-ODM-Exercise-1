@@ -1,0 +1,23 @@
+{
+  "name": "nodejs-mongoose-odm-exercise-1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shivampatel251097/Nodejs-mongoose-ODM-Exercise-1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shivampatel251097/Nodejs-mongoose-ODM-Exercise-1/issues"
+  },
+  "homepage": "https://github.com/shivampatel251097/Nodejs-mongoose-ODM-Exercise-1#readme",
+  "dependencies": {
+    "mongoose": "^5.11.9"
+  }
+}
