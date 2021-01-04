@@ -15,12 +15,12 @@ connect.then((db)=>{
 
     newDish.save()
     .then((dish)=>{
-        console.log(dish);
+        console.log("Dish",dish);
 
         return Dishes.find({}).exec();
     })
     .then((dishes)=>{
-        console.log(dishes);
+        console.log("dishes",dishes);
 
         return Dishes.deleteMany({});
     })
