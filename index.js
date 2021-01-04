@@ -24,14 +24,32 @@ connect.then((db)=>{
     .then((dish)=>{
         console.log("Dish",dish);
 
-        return Dishes.find({}).exec();
+        return Dishes.findByIdAndUpdate(dish._id,{
+            $set: {description: 'Updated test!'}
+        },{
+            new: true
+        }).exec();
     })
-    .then((dishes)=>{
-        console.log("dishes",dishes);
+    .then((dish)=>{
+        console.log("dish",dish);
 
-        return Dishes.deleteMany({});
+        dish.comments.push({
+            rating: 5,
+            comment: 'My mouth is watering!!',
+            author: 'Shivam Patel'
+        });
+        return dish.save();
     })
+        .then((dish)=> {
+            console.log(dish);
+
+            return Dishes.deleteMany({});
+        })
+        
     .then(()=>{
         return mongoose.connection.close();
     })
+    .catch((err)=>{
+        console.log(err);
+    });
 });
